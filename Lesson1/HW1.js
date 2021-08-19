@@ -6,8 +6,10 @@
 
 t = 30;
 tf = (9 / 5) * t +32;
-
+alert(tf);
+/*
 console.log(tf);
+*/
 
 /*
 Объявить две переменные: admin и name. Записать в name строку "Василий";
@@ -19,8 +21,11 @@ var admin ;
 var name = 'Василий';
 
 admin = name;
+alert(admin);
 
+/*
 console.log(admin);
+*/
 
 /*
 Чему будет равно JS-выражение 1000 + "108"/ 
@@ -29,4 +34,3 @@ console.log(admin);
 */
 
 console.log(1000 + '108')
-
