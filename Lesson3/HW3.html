@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW3</title>
+</head>
+<body>
+<p>1. С помощью цикла while вывести все простые числа в промежутке от 0 до 100.</p>
+	<script>
+	var a =100;
+	var i = 1;
+	while (i<=100)
+		{
+		    if (i<=3 || i===5 || i===7 || i===9){
+		        document.writeln(i++);
+		        }
+		    else if (i%2==0 || i%3==0 || i%5==0 || i%7==0 || i%9==0)
+		    {i++;}
+		    else
+		        {document.writeln(i++);}
+		}
+	</script>
+
+<p>2. С этого урока начинаем работать с функционалом интернет-магазина. Предположим, есть сущность корзины. <br>
+    Нужно реализовать функционал подсчета стоимости корзины в зависимости от находящихся в ней товаров.</p>
+
+<script>
+    let basket = [
+            {
+                product: "Куртка",
+                price: 3490
+            },
+            {
+                product: "Джинсы",
+                price: 2490
+            },
+            {
+                product: "Рубашка",
+                price: 1990
+            },
+            {
+                product: "Галстук",
+                price: 990
+            }
+        ];
+function countBasketPrice() {
+  for (let prod of basket){
+            basketPrice += prod.price;}
+  document.writeln("Стоимость корзины: " + basketPrice);
+}
+
+var basketPrice =0;
+    for (let prod of basket){
+
+            document.writeln(prod.product + " стоит: " + prod.price+"<br>");
+            }
+
+    countBasketPrice()
+</script>
+
+<p>
+* Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла. Выглядеть это должно так:
+for(...){// здесь пусто}
+</p>
+
+<script>
+    for(var i = 0; document.writeln(i), i++ < 9;){}
+</script>
+
+<p>
+    5. *Нарисовать пирамиду с помощью console.log, как показано на рисунке, только у вашей пирамиды должно быть 20 рядов, а не 5:<br>
+x<br>
+xx<br>
+xxx<br>
+xxxx<br>
+xxxxx<br>
+</p>
+<script>
+    var text = ''
+    for (i = 0;  i < 20; i++) {
+    text += "x";
+    document.writeln(text +'<br>')
+    }
+</script>
+
+
+</body>
+</html>
