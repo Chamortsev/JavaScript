@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>1. Написать функцию, преобразующую число в объект.<br>
+    Передавая на вход число от 0 до 999, мы должны получить на выходе объект, <br>
+    в котором в соответствующих свойствах описаны единицы, десятки и сотни. <br>
+    Например, для числа 245 мы должны получить следующий объект: {‘единицы’: 5, ‘десятки’: 4, ‘сотни’: 2}.<br>
+    Если число превышает 999, необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
+</p>
+
+<script>
+
+    function my_num(num) {
+        if (num < 0 || num > 999) {
+            console.log('error');
+            return;
+        }
+        var l = String(num);
+        l = l.length;
+        var my_result = [];
+        for (i=0; i<l; i++){
+           my_result.push(num % 10);
+           num = Math.floor(num/10);
+        }
+        switch (l) {
+		case 1:
+			document.writeln( 'единицы :' + my_result[0]);
+			break;
+		case 2:
+			document.writeln( 'десятки :' + my_result[1] + ' единицы :' + my_result[0]);
+			break;
+		case 3:
+			document.writeln( 'сотни :'+ my_result[2] +' десятки :' + my_result[1] + ' единицы :' + my_result[0]);
+			break;
+    }
+}
+    my_num(345);
+</script>
+
+</body>
+</html>
