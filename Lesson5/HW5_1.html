@@ -1,0 +1,64 @@
+<!--
+1. Создать функцию, генерирующую шахматную доску. Можно использовать любые html-теги. Доска должна быть верно разлинована на черные и белые ячейки. Строки должны нумероваться числами от 1 до 8, столбцы — латинскими буквами A, B, C, D, E, F, G, H.-->
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<title>exercise1</title>
+		<style> #ChessBoard
+{
+    width:540px;
+    height:540px;
+    border:1px solid black;
+}
+
+div
+{
+ width:60px;
+ height:60px;
+ float:left;
+ color:red;
+ font-size:30px;
+ text-align: center;
+}
+
+
+</style>
+	</head>
+
+	<body>
+
+	<div id="ChessBoard">
+</div>
+		<script>
+function my_chess() {
+			var arr = [' ','A','B','C','D','E','F','G','H'];
+			var figure = ['Л','К','С','КР','Ф','С','К','Л',];
+			var b = 8;
+			for (var i=0; i<=80 ; i++){
+			if (i<9 || i ==9 || i==18 || i==27 || i==36 || i==45 || i ==54 || i==63 || i==72   ){
+				cel = document.getElementById("ChessBoard").appendChild(document.createElement("div"));
+            	cel.style.backgroundColor = '#b0b0bb';
+            	if (i>0 & i<9){
+            		cel.innerText = arr[i];
+            	}
+            	if ( i ==9 || i==18 || i==27 || i==36 || i==45 || i ==54 || i==63 || i==72  ) {
+            		cel.innerText = b;
+            		b--;
+            	}
+            }
+			else{
+			    cel = document.getElementById("ChessBoard").appendChild(document.createElement("div"))
+    			cel.style.backgroundColor = parseInt(i % 2) == 0 ? 'black' : 'white';
+            	if (i>9 & i<18) {cel.innerText = figure[i-10];}
+            	if (i>18 & i<27 || i>63 & i<72) {cel.innerText = 'П';}
+            	if (i>72 & i<=80) {cel.innerText = figure[i-73];}
+            	}
+			}
+}
+my_chess()
+		</script>
+		</div>
+	</body>
+</html>
