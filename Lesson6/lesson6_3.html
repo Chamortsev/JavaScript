@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+
+<script>
+    var images = new Array(7);  
+    images[0] = "small/1.jpg";
+    images[1] = "small/2.jpg";
+    images[2] = "small/3.jpg";
+    images[3] = "small/4.jpg";
+    images[4] = "small/5.jpg";
+    images[5] = "small/6.jpg";
+    images[6] = "small/7.jpg";
+    images[7] = "small/8.jpg";
+
+    var numimg = 7;
+    var curimg = 0;
+
+  function  goprev() {
+    var im=document.getElementById("image");
+    if(curimg>0)
+   {
+    im.src = images[curimg-1];
+    curimg = curimg - 1;
+   }else{
+    im.src = images[curimg+numimg];
+    curimg = curimg +numimg;
+   }
+}
+
+function gonext(){
+var im=document.getElementById("image");
+    if(curimg < numimg){
+    im.src = images[curimg+1];
+    curimg = curimg + 1;
+   }else{
+    im.src = images[0];
+    curimg = 0;
+      }
+}
+
+
+</script>
+
+
+</head>
+<body>
+    <div style=" width: 460px; height: 613px;">
+        <img src="small/1.jpg" alt="lab1" height="613" width="460" id="image" />
+        </div><br>
+        <input type="button" value="PREVIOUS" id="prev" name="prev" onclick="goprev();" >
+        
+        <input type="button" value="NEXT" id="next" name="next" onclick="gonext();" >
+
+</body>
+</html>

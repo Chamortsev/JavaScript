@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+	<meta charset="utf-8">
+	<title> Lesson 6-1 </title>
+	<script>
+		function init(){
+				var images = document.getElementsByTagName("img");
+				for (var i = 0; i < images.length; i++) {
+				        images[i].onclick = changeBigPicture;}
+			}
+			function changeBigPicture(eventObj){
+				var appDiv = document.getElementById("big_image");
+				appDiv.innerHTML = "";	
+				var eventElement = eventObj.target;
+                var src = eventElement.src.replace("small", "big")
+				var imageDomElement = document.createElement("img");
+                imageDomElement.src = src;
+                appDiv.appendChild(imageDomElement);
+                imageDomElement.onerror = function(){
+                    appDiv.innerHTML = "";
+                    var imageDomElement = document.createElement("img");
+                    imageDomElement.src = "big/no_image.jpg";
+                    appDiv.appendChild(imageDomElement);
+                    alert("no photo"); 
+                }
+			}		
+			window.onload = init;
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div id="gallery">
+			<img id="image_1" class="1" src="small/1.jpg">
+			<img id="image_2" class="2" src="small/2.jpg">
+			<img id="image_3" class="3" src="small/3.jpg">
+		</div>
+
+        <div id="big">
+			<div id="big_image"></div>
+		</div>
+
+	</div>
+</body>
+</html>
